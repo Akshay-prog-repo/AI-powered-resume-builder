@@ -5,67 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Resume Builder</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>AI-Powered Resume Builder</h1>
-        <p>Create professional resumes and cover letters with AI assistance.</p>
+        <div class="header-content">
+            <h1>AI-Powered Resume Builder</h1>
+            <p>Create professional resumes and cover letters with AI assistance.</p>
+        </div>
     </header>
 
     <main>
         <section id="resume-form">
-            <h2>Build Your Resume</h2>
+            <h2><i class="fas fa-user-edit"></i> Build Your Resume</h2>
             <form id="resume-builder-form">
+                <!-- Personal Information -->
                 <div class="form-group">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" required>
+                    <label for="full-name"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="John Doe" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="industry">Industry</label>
+                    <label for="phone"><i class="fas fa-phone"></i> Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St, City, Country">
+                </div>
+
+                <!-- Professional Information -->
+                <div class="form-group">
+                    <label for="industry"><i class="fas fa-briefcase"></i> Industry</label>
                     <select id="industry" name="industry" required>
                         <option value="it">Information Technology</option>
                         <option value="finance">Finance</option>
                         <option value="healthcare">Healthcare</option>
                         <option value="education">Education</option>
+                        <option value="marketing">Marketing</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="experience">Experience</label>
-                    <textarea id="experience" name="experience" rows="5" required></textarea>
+                    <label for="job-title"><i class="fas fa-user-tie"></i> Job Title</label>
+                    <input type="text" id="job-title" name="job-title" placeholder="Software Engineer" required>
                 </div>
 
+                <!-- Experience -->
                 <div class="form-group">
-                    <label for="skills">Skills</label>
-                    <textarea id="skills" name="skills" rows="5" required></textarea>
+                    <label for="experience"><i class="fas fa-history"></i> Work Experience</label>
+                    <textarea id="experience" name="experience" rows="5" placeholder="Describe your work experience..." required></textarea>
                 </div>
 
+                <!-- Education -->
                 <div class="form-group">
-                    <label for="linkedin">LinkedIn Profile URL</label>
-                    <input type="url" id="linkedin" name="linkedin">
+                    <label for="education"><i class="fas fa-graduation-cap"></i> Education</label>
+                    <textarea id="education" name="education" rows="5" placeholder="List your educational background..." required></textarea>
                 </div>
 
-                <button type="submit">Generate Resume</button>
+                <!-- Skills -->
+                <div class="form-group">
+                    <label for="skills"><i class="fas fa-tools"></i> Skills</label>
+                    <textarea id="skills" name="skills" rows="5" placeholder="List your skills..." required></textarea>
+                </div>
+
+                <!-- LinkedIn Integration -->
+                <div class="form-group">
+                    <label for="linkedin"><i class="fab fa-linkedin"></i> LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"><i class="fas fa-magic"></i> Generate Resume</button>
             </form>
         </section>
 
+        <!-- Resume Preview Section -->
         <section id="resume-preview">
-            <h2>Resume Preview</h2>
+            <h2><i class="fas fa-eye"></i> Resume Preview</h2>
             <div id="preview-content">
                 <!-- AI-generated resume will be displayed here -->
+                <p class="placeholder-text">Your resume will appear here once generated.</p>
             </div>
-            <button id="download-resume">Download Resume</button>
+            <button id="download-resume"><i class="fas fa-download"></i> Download Resume</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 AI-Powered Resume Builder</p>
+        <p>&copy; 2023 AI-Powered Resume Builder. All rights reserved.</p>
     </footer>
 
     <script src="scripts.js"></script>
