@@ -57,6 +57,18 @@ document.getElementById('add-skill').addEventListener('click', () => {
     skillsFields.appendChild(newSkill);
 });
 
+// Add Language Field
+document.getElementById('add-language').addEventListener('click', () => {
+    const languagesFields = document.getElementById('languages-fields');
+    const newLanguage = document.createElement('div');
+    newLanguage.classList.add('language-entry');
+    newLanguage.innerHTML = `
+        ${createInputField('text', 'language-name', 'Language (e.g., English)').outerHTML}
+        ${createInputField('text', 'proficiency', 'Proficiency (e.g., Fluent)').outerHTML}
+    `;
+    languagesFields.appendChild(newLanguage);
+});
+
 // Generate Resume Preview
 document.getElementById('resume-builder-form').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -66,6 +78,7 @@ document.getElementById('resume-builder-form').addEventListener('submit', (event
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     const address = document.getElementById('address').value;
+    const birthdate = document.getElementById('birthdate').value;
     const profilePicture = document.getElementById('profile-picture').files[0];
     const industry = document.getElementById('industry').value;
     const jobTitle = document.getElementById('job-title').value;
@@ -103,54 +116,17 @@ document.getElementById('resume-builder-form').addEventListener('submit', (event
         `;
     });
 
+    // Languages
+    let languagesHTML = '';
+    document.querySelectorAll('.language-entry').forEach(entry => {
+        languagesHTML += `
+            <p><strong>${entry.querySelector('.language-name').value}</strong>: ${entry.querySelector('.proficiency').value}</p>
+        `;
+    });
+
     // Generate resume preview
     const resumePreview = `
         <div class="resume-header">
             <h3>${fullName}</h3>
             <p><i class="fas fa-envelope"></i> ${email}</p>
-            <p><i class="fas fa-phone"></i> ${phone}</p>
-            <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
-            ${profilePicture ? `<img src="${URL.createObjectURL(profilePicture)}" alt="Profile Picture" class="profile-picture">` : ''}
-        </div>
-        <hr>
-        <div class="resume-section">
-            <h4><i class="fas fa-briefcase"></i> ${jobTitle} (${industry})</h4>
-        </div>
-        <div class="resume-section">
-            <h4><i class="fas fa-history"></i> Work Experience</h4>
-            ${experienceHTML}
-        </div>
-        <div class="resume-section">
-            <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-            ${educationHTML}
-        </div>
-        <div class="resume-section">
-            <h4><i class="fas fa-tools"></i> Skills</h4>
-            ${skillsHTML}
-        </div>
-        <div class="resume-section">
-            <h4><i class="fab fa-linkedin"></i> LinkedIn</h4>
-            <p><a href="${linkedin}" target="_blank">${linkedin}</a></p>
-        </div>
-    `;
-
-    // Display resume preview
-    const previewContent = document.getElementById('preview-content');
-    previewContent.innerHTML = resumePreview;
-    previewContent.classList.remove('placeholder-text');
-});
-
-// Download Resume
-document.getElementById('download-resume').addEventListener('click', () => {
-    const resumeContent = document.getElementById('preview-content').innerHTML;
-    const blob = new Blob([resumeContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'resume.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-});
+            <p><i class="fas fa-phone"></i> ${phone}</
