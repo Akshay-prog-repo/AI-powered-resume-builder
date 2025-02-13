@@ -3,8 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
-    color: #333;
+    background: #1e1e2f; /* Dark background */
+    color: #e0e0e0; /* Light text */
     line-height: 1.6;
 }
 
@@ -48,7 +48,7 @@ main {
 }
 
 #resume-form, #resume-preview {
-    background-color: #fff;
+    background-color: #2a2a40; /* Dark card background */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -64,7 +64,7 @@ main {
 #resume-form h2, #resume-preview h2 {
     font-size: 2rem;
     margin-bottom: 25px;
-    color: #667eea;
+    color: #667eea; /* Accent color */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -79,7 +79,7 @@ label {
     display: block;
     margin-bottom: 10px;
     font-weight: 600;
-    color: #444;
+    color: #e0e0e0; /* Light text */
     display: flex;
     align-items: center;
     gap: 8px;
@@ -88,16 +88,18 @@ label {
 input, select, textarea, .experience-entry, .education-entry, .skill-entry, .language-entry {
     width: 100%;
     padding: 14px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #444; /* Dark border */
     border-radius: 10px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 15px;
     font-family: 'Poppins', sans-serif;
+    background-color: #3a3a4f; /* Dark input background */
+    color: #e0e0e0; /* Light text */
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #667eea;
+    border-color: #667eea; /* Accent color */
     outline: none;
     box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
@@ -123,10 +125,10 @@ button:hover {
 
 /* Resume Preview Styles */
 #preview-content {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #444; /* Dark border */
     padding: 25px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #3a3a4f; /* Dark background */
     min-height: 300px;
 }
 
@@ -143,21 +145,22 @@ button:hover {
 
 .template-selection label {
     font-weight: 600;
-    color: #444;
+    color: #e0e0e0; /* Light text */
 }
 
 .template-selection select {
     padding: 10px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #444; /* Dark border */
     border-radius: 8px;
     font-size: 1rem;
     margin-left: 10px;
-    background-color: #f9f9f9;
+    background-color: #3a3a4f; /* Dark background */
+    color: #e0e0e0; /* Light text */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .template-selection select:focus {
-    border-color: #667eea;
+    border-color: #667eea; /* Accent color */
     box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
 
@@ -176,7 +179,7 @@ footer {
 /* Icons */
 .fas, .fab {
     margin-right: 8px;
-    color: #667eea;
+    color: #667eea; /* Accent color */
 }
 
 /* Animations */
