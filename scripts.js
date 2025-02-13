@@ -4,21 +4,31 @@ document.getElementById('resume-builder-form').addEventListener('submit', functi
     // Get form data
     const fullName = document.getElementById('full-name').value;
     const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
     const industry = document.getElementById('industry').value;
+    const jobTitle = document.getElementById('job-title').value;
     const experience = document.getElementById('experience').value;
+    const education = document.getElementById('education').value;
     const skills = document.getElementById('skills').value;
     const linkedin = document.getElementById('linkedin').value;
 
     // Generate resume preview
     const resumePreview = `
         <h3>${fullName}</h3>
-        <p>Email: ${email}</p>
-        <p>Industry: ${industry}</p>
-        <h4>Experience</h4>
+        <p><i class="fas fa-envelope"></i> ${email}</p>
+        <p><i class="fas fa-phone"></i> ${phone}</p>
+        <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+        <hr>
+        <h4><i class="fas fa-briefcase"></i> ${jobTitle} (${industry})</h4>
+        <h4><i class="fas fa-history"></i> Work Experience</h4>
         <p>${experience}</p>
-        <h4>Skills</h4>
+        <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+        <p>${education}</p>
+        <h4><i class="fas fa-tools"></i> Skills</h4>
         <p>${skills}</p>
-        <p>LinkedIn: <a href="${linkedin}" target="_blank">${linkedin}</a></p>
+        <h4><i class="fab fa-linkedin"></i> LinkedIn</h4>
+        <p><a href="${linkedin}" target="_blank">${linkedin}</a></p>
     `;
 
     document.getElementById('preview-content').innerHTML = resumePreview;
