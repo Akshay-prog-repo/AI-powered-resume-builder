@@ -3,13 +3,13 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background: #f8f9fa;
     color: #333;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
     padding: 80px 20px;
     text-align: center;
@@ -64,7 +64,7 @@ main {
 #resume-form h2, #resume-preview h2 {
     font-size: 2rem;
     margin-bottom: 25px;
-    color: #2575fc;
+    color: #667eea;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -88,7 +88,7 @@ label {
 input, select, textarea, .experience-entry, .education-entry, .skill-entry, .language-entry {
     width: 100%;
     padding: 14px;
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0;
     border-radius: 10px;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -97,13 +97,13 @@ input, select, textarea, .experience-entry, .education-entry, .skill-entry, .lan
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #6a11cb;
+    border-color: #667eea;
     outline: none;
-    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
 
 button {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
     padding: 14px 28px;
     border: none;
@@ -117,13 +117,13 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    background: linear-gradient(135deg, #764ba2, #667eea);
     transform: translateY(-2px);
 }
 
 /* Resume Preview Styles */
 #preview-content {
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0;
     padding: 25px;
     border-radius: 10px;
     background-color: #f9f9f9;
@@ -148,7 +148,7 @@ button:hover {
 
 .template-selection select {
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
     margin-left: 10px;
@@ -157,15 +157,15 @@ button:hover {
 }
 
 .template-selection select:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
 }
 
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
     position: fixed;
     bottom: 0;
@@ -176,7 +176,7 @@ footer {
 /* Icons */
 .fas, .fab {
     margin-right: 8px;
-    color: #6a11cb;
+    color: #667eea;
 }
 
 /* Animations */
