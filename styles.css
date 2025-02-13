@@ -1,39 +1,45 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f4f8;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 600;
 }
 
 header p {
     margin: 10px 0 0;
     font-size: 1.2rem;
+    opacity: 0.9;
 }
 
 main {
     padding: 20px;
     display: flex;
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #resume-form, #resume-preview {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1;
 }
@@ -42,6 +48,9 @@ main {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #2575fc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Form Styles */
@@ -54,16 +63,20 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-input, select, textarea, .experience-entry, .education-entry, .skill-entry {
+input, select, textarea, .experience-entry, .education-entry, .skill-entry, .language-entry {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -76,10 +89,13 @@ button {
     color: #fff;
     padding: 12px 24px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 button:hover {
@@ -90,7 +106,7 @@ button:hover {
 #preview-content {
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: #f9f9f9;
     min-height: 300px;
 }
@@ -101,10 +117,36 @@ button:hover {
     font-style: italic;
 }
 
+/* Template Selection */
+.template-selection {
+    margin-bottom: 20px;
+}
+
+.template-selection label {
+    font-weight: 600;
+    color: #555;
+}
+
+.template-selection select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
     padding: 15px;
     background-color: #333;
     color: #fff;
-    position:
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Icons */
+.fas, .fab {
+    margin-right: 8px;
+}
