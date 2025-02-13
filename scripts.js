@@ -129,4 +129,54 @@ document.getElementById('resume-builder-form').addEventListener('submit', (event
         <div class="resume-header">
             <h3>${fullName}</h3>
             <p><i class="fas fa-envelope"></i> ${email}</p>
-            <p><i class="fas fa-phone"></i> ${phone}</
+            <p><i class="fas fa-phone"></i> ${phone}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${address}</p>
+            <p><i class="fas fa-birthday-cake"></i> ${birthdate}</p>
+            ${profilePicture ? `<img src="${URL.createObjectURL(profilePicture)}" alt="Profile Picture" class="profile-picture">` : ''}
+        </div>
+        <hr>
+        <div class="resume-section">
+            <h4><i class="fas fa-briefcase"></i> ${jobTitle} (${industry})</h4>
+        </div>
+        <div class="resume-section">
+            <h4><i class="fas fa-history"></i> Work Experience</h4>
+            ${experienceHTML}
+        </div>
+        <div class="resume-section">
+            <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+            ${educationHTML}
+        </div>
+        <div class="resume-section">
+            <h4><i class="fas fa-tools"></i> Skills</h4>
+            ${skillsHTML}
+        </div>
+        <div class="resume-section">
+            <h4><i class="fas fa-language"></i> Languages</h4>
+            ${languagesHTML}
+        </div>
+        <div class="resume-section">
+            <h4><i class="fab fa-linkedin"></i> LinkedIn</h4>
+            <p><a href="${linkedin}" target="_blank">${linkedin}</a></p>
+        </div>
+    `;
+
+    // Display resume preview
+    const previewContent = document.getElementById('preview-content');
+    previewContent.innerHTML = resumePreview;
+    previewContent.classList.remove('placeholder-text');
+});
+
+// Download Resume
+document.getElementById('download-resume').addEventListener('click', () => {
+    const resumeContent = document.getElementById('preview-content').innerHTML;
+    const blob = new Blob([resumeContent], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'resume.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+});
