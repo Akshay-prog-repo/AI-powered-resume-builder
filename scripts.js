@@ -166,17 +166,16 @@ document.getElementById('resume-builder-form').addEventListener('submit', (event
     previewContent.classList.remove('placeholder-text');
 });
 
-// Download Resume
+// Download Resume as PDF
 document.getElementById('download-resume').addEventListener('click', () => {
-    const resumeContent = document.getElementById('preview-content').innerHTML;
-    const blob = new Blob([resumeContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'resume.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const previewContent = document.getElementById('preview-content');
+    html2canvas(previewContent).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jspdf.jsPDF();
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('resume.pdf');
+    });
 });
