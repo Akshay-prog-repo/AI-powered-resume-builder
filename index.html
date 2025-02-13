@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI-Powered Resume Builder</h1>
+        <p>Create professional resumes and cover letters with AI assistance.</p>
+    </header>
+
+    <main>
+        <section id="resume-form">
+            <h2>Build Your Resume</h2>
+            <form id="resume-builder-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry" required>
+                        <option value="it">Information Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <textarea id="experience" name="experience" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <textarea id="skills" name="skills" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin" name="linkedin">
+                </div>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </section>
+
+        <section id="resume-preview">
+            <h2>Resume Preview</h2>
+            <div id="preview-content">
+                <!-- AI-generated resume will be displayed here -->
+            </div>
+            <button id="download-resume">Download Resume</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 AI-Powered Resume Builder</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
